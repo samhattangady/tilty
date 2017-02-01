@@ -18,9 +18,13 @@ while True:
         flags=cv2.cv.CV_HAAR_SCALE_IMAGE
     )
 
-    # Draw a rectangle around the faces
+    Draw a rectangle around the faces
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+    # if len(faces):
+    #     x, y, w, h = faces[0]
+    #     frame = frame[y:y+h, x:x+w]
 
     # Display the resulting frame
     cv2.imshow('Video', (cv2.flip(frame, 1)))
